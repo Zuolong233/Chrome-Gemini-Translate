@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html style="width: 320px; height: auto;">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { padding: 15px; font-family: sans-serif; background: #f9f9f9; }
+    h4 { margin: 0 0 10px 0; color: #333; }
+    .group { margin-bottom: 15px; background: white; padding: 10px; border-radius: 6px; border: 1px solid #ddd; }
+    label { font-size: 12px; color: #666; display: block; margin-bottom: 5px; }
+    input, select { width: 100%; padding: 6px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 5px; }
+    button { width: 100%; padding: 8px; cursor: pointer; border: none; border-radius: 4px; font-size: 13px; transition: 0.2s; }
+    .btn-primary { background: #0b57d0; color: white; }
+    .btn-primary:hover { background: #0842a0; }
+    .btn-secondary { background: #eee; color: #333; display: block; width: 100%; }
+    .btn-secondary:hover { background: #ddd; }
+    .row { display: flex; gap: 5px; }
+    #msg { font-size: 12px; margin-top: 10px; min-height: 15px; }
+  </style>
+</head>
+<body>
+  <h4>Gemini 翻译控制台</h4>
+  
+  <div class="group">
+    <label>1. API Key</label>
+    <input type="password" id="apiKeyInput" placeholder="输入 Key">
+    <button id="saveKeyBtn" class="btn-secondary">保存 Key</button>
+  </div>
+
+  <div class="group">
+    <label>2. 选择模型</label>
+    <div class="row">
+      <select id="modelSelect">
+        <option value="" disabled selected>请先刷新...</option>
+      </select>
+      <button id="refreshModelsBtn" class="btn-secondary" style="width: 40px;" title="刷新列表">🔄</button>
+    </div>
+    <div style="font-size: 10px; color: #888; margin-top: 5px;">* 推荐使用 Lite 或 Flash 模型</div>
+  </div>
+
+  <button id="runBtn" class="btn-primary">3. 开始翻译</button>
+  <div id="msg"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
